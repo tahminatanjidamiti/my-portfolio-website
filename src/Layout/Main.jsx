@@ -28,6 +28,8 @@ const Main = () => {
             return !prev;
         });
     };
+    
+
     return (
         <div>
             <Navbar handleThemeToggle={handleThemeToggle} isDark={isDark}></Navbar>

@@ -17,7 +17,7 @@ const Footer = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:5000/userClient", {
+            const response = await fetch("https://my-portfolio-server-dusky-nine.vercel.app/userClient", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
@@ -38,7 +38,7 @@ const Footer = () => {
                 });
             }
         } catch (error) {
-            console.error("Error sending message:", error);
+            // console.error("Error sending message:", error);
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
@@ -54,10 +54,9 @@ const Footer = () => {
                 <nav>
                     <p className="text-4xl italic text-sky-300 font-bold">Tahmina Tanjida</p>
                     <div className="flex flex-col">
-                        <a className="link link-hover">About us</a>
-                        <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Privacy Policy</a>
-                        <a className="link link-hover">Terms of use</a>
+                        <a href="#education" className="link link-hover">Education</a>
+                        <a href="#projects" className="link link-hover">Projects</a>
+                        <a href="#about-me" className="link link-hover">About Me</a>
                     </div>
                     <div className="flex gap-4 mt-4">
                         <Link to="mailto:mity2027@gmail.com"><img className="rounded-xl" src="https://img.icons8.com/?size=24&id=tnnUFgHrPmR0&format=gif" alt="Email icon!" /></Link>
@@ -87,7 +86,7 @@ const Footer = () => {
                             onChange={handleChange}
                             required
                         ></textarea>
-                        <button type="submit" className="w-18 h-16 bg-white-600 inline-flex text-white rounded-xl items-center gap-2">
+                        <button type="submit" className="w-18 h-16 inline-flex text-white rounded-xl items-center gap-2">
                             Submit <span className="mt-1 w-5 h-5 bg-teal-600 inline-flex rounded-full text-white justify-center items-center">
                             <IoIosArrowDroprightCircle />
                         </span>
