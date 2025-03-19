@@ -10,7 +10,7 @@ const Footer = () => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
-            [name]: name === "phone" ? Number(value) || "" : value
+            [name]: name === "phone" ? BigInt(value) || "" : value
         });
     };
 

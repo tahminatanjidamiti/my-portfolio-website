@@ -1,10 +1,16 @@
-import React, {  useState } from 'react';
+import React, {  useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const Projects = ({ loadedProjects }) => {
+const Projects = () => {
    
-    const [projects, setProjects] = useState(loadedProjects);
+    const [projects, setProjects] = useState(null);
+    useEffect(() => {
+        fetch('https://my-portfolio-server-dusky-nine.vercel.app/projects')
+            .then(res => res.json())
+            .then(data => setProjects(data || []))  // 👈 Ensure default array instead of null
+            .catch(err => console.error(err));
+    }, []);
 
     return (
         <div className="p-8 md:p-24" id="projects">

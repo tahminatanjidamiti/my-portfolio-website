@@ -1,9 +1,17 @@
-import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, {  useState, useEffect } from 'react';import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const DetailsProject = () => {
-    const loadedProject = useLoaderData();
+    const { id } = useParams();
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        fetch(`https://my-portfolio-server-dusky-nine.vercel.app/project_details/${id}`)
+            .then((res) => res.json())
+            .then((data) => setData(data))
+            .catch((error) => console.error("Error fetching data:", error));
+    }, [id]);
+
+    if (!data) return <div>Loading...</div>
 
     const { 
         project_name, 
@@ -14,7 +22,7 @@ const DetailsProject = () => {
         github_repository_link, 
         challenges_faced, 
         improvements_and_future_plans 
-    } = loadedProject;
+    } = data;
     return (
         <div className="p-6 max-w-4xl mx-auto bg-sky-300 shadow-lg rounded-lg my-6 relative">
             <motion.div
