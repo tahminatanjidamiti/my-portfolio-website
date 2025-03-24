@@ -59,7 +59,7 @@ const Footer = () => {
                         <a href="#about-me" className="link link-hover">About Me</a>
                     </div>
                     <div className="flex gap-4 mt-4">
-                        <Link to="mailto:mity2027@gmail.com"><img className="rounded-xl" src="https://img.icons8.com/?size=24&id=tnnUFgHrPmR0&format=gif" alt="Email icon!" /></Link>
+                        <Link to="mailto:tahminatanjidamiti@gmail.com"><img className="rounded-xl" src="https://img.icons8.com/?size=24&id=tnnUFgHrPmR0&format=gif" alt="Email icon!" /></Link>
                         <Link to="https://www.linkedin.com/in/tahminatanjida/"><img className="rounded-md" src="https://img.icons8.com/?size=24&id=TpMqKvVFD9pP&format=gif" alt="LinkedIn icon!" /></Link>
                         <Link to="https://github.com/tahminatanjidamiti"><img className="rounded-full" src="https://img.icons8.com/?size=24&id=akG4VRhAoSii&format=gif" alt="Github icon!" /></Link>
                     </div>
