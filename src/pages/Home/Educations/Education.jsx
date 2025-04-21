@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Novatrix } from "uvcanvas";
 
 const Education = () => {
     return (
         <div className="p-6 my-10 max-w-4xl mx-auto shadow-lg rounded-lg text-black relative" id="education">
+            <Novatrix style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', zIndex: -1 }} />
             <motion.div
                             className="absolute inset-0 -z-10"
                             animate={{
